@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sklivvz/andela-data-structures/issues"
   },
-  "homepage": "https://github.com/sklivvz/andela-data-structures#readme"
+  "homepage": "https://github.com/sklivvz/andela-data-structures#readme",
+  "dependencies": {
+    "testrunner.js": "^0.1.1"
+  }
 }
