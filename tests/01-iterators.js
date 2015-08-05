@@ -63,6 +63,21 @@ module.exports = {
             assert.areEqual(0, sut.next().value);
             assert.areEqual(0, sut.next().value);
             assert.areEqual(0, sut.next().value);
+        },
+        'directly embed generator': function() {
+            var sut = iterators.numbers().flatten(function(i){
+                return function*(){
+                    for(var j=0; j<=i; j++) {
+                        yield j*i;
+                    }
+                }();
+            });
+            assert.areEqual(0, sut.next().value);
+            assert.areEqual(0, sut.next().value);
+            assert.areEqual(1, sut.next().value);
+            assert.areEqual(0, sut.next().value);
+            assert.areEqual(2, sut.next().value);
+            assert.areEqual(4, sut.next().value);
         }
     },
 }
